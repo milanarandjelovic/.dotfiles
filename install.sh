@@ -47,6 +47,7 @@ symlink_or_ask ~/.dotfiles/composer ~/.composer
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +PluginClean +PluginClean +quitall
 
+# Install oh-my-zs
 if [ ! -d ~/.oh-my-zsh  ]; then
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
