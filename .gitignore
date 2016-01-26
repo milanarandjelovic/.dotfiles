@@ -1,0 +1,7 @@
+.netrwhist
+undodir
+vim/bundle/**
+vim/Vundle.vim
+vim/vim
+composer
+vim/flavors

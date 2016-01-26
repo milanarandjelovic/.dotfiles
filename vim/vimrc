@@ -1,0 +1,751 @@
+source ~/.vim/functions.vim
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+
+" Colors
+" ===============================
+Plugin 'flazz/vim-colorschemes'
+Plugin 'jonathanfilip/vim-lucius'
+
+" Vim main plugins
+" ===============================
+Plugin 'sjl/gundo.vim'
+Plugin 'bling/vim-airline'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-surround'
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+Plugin 'edsono/vim-matchit'
+Plugin 'tpope/vim-fugitive'
+Plugin 'henrik/vim-indexed-search'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-repeat'
+Plugin 'yukunlin/auto-pairs'
+Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-misc'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'godlygeek/tabular'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rhysd/clever-f.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'ervandew/supertab'
+Plugin 'austintaylor/vim-commaobject'
+Plugin 'tristen/vim-sparkup'
+Plugin 'othree/html5.vim'
+Plugin 'takac/vim-hardtime'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'weierophinney/argumentrewrap'
+Plugin 'joonty/vdebug'
+Plugin 'shawncplus/Vim-toCterm'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-speeddating'
+Plugin 'janko-m/vim-test'
+Plugin 'mattn/gist-vim.git'
+Plugin 'mattn/webapi-vim.git'
+
+" PHP
+" ===============================
+Plugin 'StanAngeloff/php.vim'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'docteurklein/php-getter-setter.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'm2mdas/phpcomplete-extended'
+
+" Ruby on Rails
+" ===============================
+Plugin 'vim-scripts/ruby-matchit'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+
+" Togglable panels
+" ===============================
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-vinegar'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
+
+" Language vundles
+" ===============================
+Plugin 'pangloss/vim-javascript'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+
+Plugin 'fatih/vim-go'
+" ===============================
+" Plugin 'klen/python-mode'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-scripts/c.vim'
+
+" Databases
+" ===============================
+Plugin 'vim-scripts/SQLUtilities'
+Plugin 'NagatoPain/AutoSQLUpperCase.vim'
+
+" Autocomplete
+" ===============================
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+
+" Snippets
+" ===============================
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+
+"*******************************
+"*******************************
+" SETTINGS & KEYBINDINGS      **
+"*******************************
+"*******************************
+
+set expandtab tabstop=4 softtabstop=4 shiftwidth=4
+set smarttab
+set autoindent
+set ruler rulerformat=%=%l/%L
+set guicursor=a:blinkon0
+set hidden
+set ignorecase
+set smartcase
+set showcmd
+set showmatch
+set incsearch
+set hls
+set ls=2
+set cursorline
+set nowrap
+set backspace=2
+set backspace=indent,eol,start
+set shell=/bin/bash
+set completeopt -=preview
+set textwidth=100
+set wildmenu
+set wildmode=list:longest,full
+set noshowmode
+set cmdheight=1
+set autoread
+display=lastline
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+set foldlevel=1
+set foldmethod=syntax
+set nobackup
+set noincsearch
+set number numberwidth=4
+set pastetoggle=<F3>
+set scrolloff=4 sidescrolloff=10
+set splitbelow
+set splitright
+set tabpagemax=20
+set tags+=./tags.vendors,tags.vendors
+set ttyfast
+
+set statusline=%f       " file name
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] " file format
+set statusline+=%h      " help file flag
+set statusline+=%m      " modified flag
+set statusline+=%r      " read only flag
+set statusline+=%y      " filetype
+set statusline+=%=      " left/right separator
+set statusline+=%c,     " cursor column
+set statusline+=%l/%L   " cursor line/total lines
+set statusline+=\ %P    " percent through file
+
+if exists("+relativenumber")
+  set relativenumber
+endif
+
+" Backup/persistance settings
+" ===============================
+set undodir=~/.vim/tmp/undo//
+set backup
+set writebackup
+set noswapfile
+
+" Persist (g)undo tree between sessions
+" ======================================
+set undofile
+set history=100
+set undolevels=100
+
+" Set <leader>
+" ===============================
+let mapleader=","
+" Enable mouse
+set mouse=a
+
+" Show trailing whitespaces
+" ===============================
+set list
+set listchars=tab:▸\ ,trail:¬,nbsp:.,extends:❯,precedes:❮
+augroup ListChars2
+    au!
+    autocmd filetype go set listchars+=tab:\ \ 
+    autocmd ColorScheme * hi! link SpecialKey Normal
+augroup END
+
+" Syntax highlighting
+" ===============================
+syntax on
+colorscheme solarized
+set background=dark
+
+" Session management
+" ===============================
+" let g:session_directory = "~/.vim/session"
+let g:session_autoload = "no"
+let g:session_autosave = "no"
+let g:session_command_aliases = 1
+nnoremap <leader>so :OpenSession 
+nnoremap <leader>ss :SaveSession 
+nnoremap <leader>sd :DeleteSession<CR>
+nnoremap <leader>sc :CloseSession<CR>
+
+" Togglables without FN keys
+" ===============================
+nnoremap <leader>1 :GundoToggle<CR>
+nnoremap <leader>3 :TlistToggle<CR>
+nnoremap <leader>4 :TagbarToggle<CR>
+
+" Visual reselect of just pasted
+" ===============================
+nnoremap gp `[v`]
+
+" Make enter break and do newlines
+" ===============================
+nnoremap <CR> O<Esc>j
+nnoremap <leader>j i<CR><Esc>==
+
+" Make space in normal mode add space
+" ===============================
+nnoremap <Space> i<Space><Esc>l
+
+" Better scrolling
+" ===============================
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+
+" Consistent menu navigation
+" ==============================
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+
+" Intellij style autocomplete shortcut
+" ===============================
+inoremap <C-@> <C-x><C-o>
+inoremap <C-Space> <C-x><C-o>
+
+" ctrlP config
+" ===============================
+let g:ctrlp_map = "<c-p>"
+nnoremap <leader>t :CtrlPMRU<CR>
+nnoremap <leader>bp :CtrlPBuffer<CR>
+
+let g:ctrlp_max_height = 30
+let g:ctrlp_show_hidden = 1
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|data|tmp|log)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+
+" Easy motion rebinded
+" ===============================
+nmap <leader>f <Plug>(easymotion-f2)
+nmap <leader>F <Plug>(easymotion-F2)
+
+" Open vimrc
+" ===============================
+nnoremap <leader>v :e  ~/.nvimrc<CR>
+nnoremap <leader>V :tabnew  ~/.nvimrc<CR>
+
+" Reload all open buffers
+" ===============================
+nnoremap <leader>Ra :tabdo exec "windo e!"
+
+" Map next-previous jumps
+" ===============================
+nnoremap <leader>m <C-o>
+nnoremap <leader>. <C-i>
+
+" Keep search matches in the middle of the window.
+" ==================================================
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Use sane regexes
+" ===============================
+nnoremap <leader>/ /\v
+vnoremap <leader>/ /\v
+
+" Use :Subvert search
+" ===============================
+nnoremap <leader>// :S /
+vnoremap <leader>// :S /
+
+" Use regular replace
+" ===============================
+nnoremap <leader>s :%s /
+vnoremap <leader>s :%s /
+
+" Use :Subvert replace
+" ===============================
+nnoremap <leader>S :%S /
+vnoremap <leader>S :%S /
+
+" clever-f prompt
+" ===============================
+let g:clever_f_show_prompt = 1
+let g:clever_f_across_no_line = 1
+
+" Airline
+" ===============================
+if !exists("g:airline_symbols")
+  let g:airline_symbols = {}
+endif
+let g:airline_theme="powerlineish"
+let g:airline_powerline_fonts=1
+let g:airline#extensions#branch#empty_message  =  "no .git"
+let g:airline#extensions#whitespace#enabled    =  0
+let g:airline#extensions#syntastic#enabled     =  1
+let g:airline#extensions#tabline#enabled       =  1
+let g:airline#extensions#tabline#tab_nr_type   =  1 " tab number
+let g:airline#extensions#tabline#fnamecollapse =  1 " /a/m/model.rb
+let g:airline#extensions#hunks#non_zero_only   =  1 " git gutter
+
+" YouCompleteMe
+" ===============================
+let g:ycm_filetype_blacklist = {}
+let g:ycm_key_list_select_completion = []
+let g:ycm_key_list_previous_completion = []
+let g:ycm_key_invoke_completion = "<C-j>"
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+if executable("ag")
+  let g:ackprg = "ag --nogroup --column"
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" Reload ctags
+" ===============================
+" sudo apt-get install exuberant-ctags
+nnoremap <leader>C :!ctags -R --fields=+l --exclude=.git --exclude=log --exclude=tmp *<CR><CR>
+
+" Git and ack stuff
+" ===============================
+let g:gitgutter_enabled = 1
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+nnoremap <leader>G mG:Git! 
+nnoremap <leader>g :Git 
+nnoremap <leader>A :!ag 
+nnoremap <leader>a :Ag! 
+
+
+
+"*******************************
+"*******************************
+" PROGRAMMING LANGUAGES	      **
+"*******************************
+"*******************************
+
+" Vim-go settings
+" ===============================
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+" Vim-go bindings
+" ===============================
+augroup FileType go
+  au!
+  au FileType go nmap gd <Plug>(go-def)
+  au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
+
+  au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
+  au FileType go nmap <Leader>db <Plug>(go-doc-browser)
+
+  au FileType go nmap <Leader>i <Plug>(go-info)
+
+  au FileType go nmap <leader>r <Plug>(go-run)
+  au FileType go nmap <leader>b <Plug>(go-build)
+  au FileType go nmap <leader>t <Plug>(go-test)
+augroup END
+
+" General file runners for various languages
+" =============================================
+function! LangRunner()
+  if(&ft=="python")
+    nnoremap <leader>r :!python2 %<cr>
+  elseif(&ft=="ruby")
+    nnoremap <leader>r :!ruby %<cr>
+  elseif(&ft=="javascript")
+    nnoremap <leader>r :!node %<cr>
+  elseif(&ft=="php")
+    nnoremap <leader>r :!php %<cr>
+  elseif(&ft=="c")
+    nnoremap <leader>r :!make run<cr>
+  endif
+endfunction
+
+au BufEnter * call LangRunner()
+
+" Enable angular syntax
+" ===============================
+let g:used_javascript_libs = 'jquery,angularjs'
+
+
+
+"*******************************
+"*******************************
+" COOL HACKS		      **
+"*******************************
+"*******************************
+
+" Make sure Vim returns to the same line when you reopen a file.
+" =================================================================
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
+" Thorfile, Rakefile, Vagrantfile, and Gemfile are Ruby
+" ========================================================
+autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+
+" hb is handlebars
+" ===============================
+autocmd BufNewFile,BufRead *.hb set ai filetype=handlebars
+
+" hbs is handlebars
+" ===============================
+autocmd BufNewFile,BufRead *.hbs set ai filetype=handlebars
+
+" JSON is JS
+" ===============================
+autocmd BufNewFile,BufRead *.json set ai filetype=javascript
+
+" Enable spell check
+" ===============================
+autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
+
+" Improved highlight for php: https://github.com/StanAngeloff/php.vim
+" ======================================================================
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+" Visual Mode */# from Scrooloose
+" ==================================
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+" Text Highlighter = <leader>h[1-4]
+" =====================================
+function! HiInterestingWord(n)
+    " Save our location.
+    normal! mz
+    " Yank the current word into the z register.
+    normal! "zyiw
+    " Calculate an arbitrary match ID.  Hopefully nothing else is using it.
+    let mid = 86750 + a:n
+    " Clear existing matches, but don't worry if they don't exist.
+    silent! call matchdelete(mid)
+    " Construct a literal pattern that has to match at boundaries.
+    let pat = '\V\<' . escape(@z, '\') . '\>'
+    " Actually match the words.
+    call matchadd("InterestingWord" . a:n, pat, 1, mid)
+    " Move back to our original location.
+    normal! `z
+endfunction
+
+nnoremap <leader>hh :call clearmatches()<CR>:noh<CR>
+nnoremap <silent> <leader>h1 :call HiInterestingWord(1)<cr>
+nnoremap <silent> <leader>h2 :call HiInterestingWord(2)<cr>
+nnoremap <silent> <leader>h3 :call HiInterestingWord(3)<cr>
+nnoremap <silent> <leader>h4 :call HiInterestingWord(4)<cr>
+nnoremap <silent> <leader>h5 :call HiInterestingWord(5)<cr>
+nnoremap <silent> <leader>h6 :call HiInterestingWord(6)<cr>
+
+hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
+hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#aeee00 ctermbg=154
+hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
+hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
+hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
+hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
+
+highlight search ctermfg=white ctermbg=3423513
+
+" Better retab
+fu! Retab()
+  :retab
+  :%s/\s\+$//
+endfunction
+
+"*******************************
+"*******************************
+" BUG WORKAROUNDS	      **
+"*******************************
+"*******************************
+
+" Realign buffers when iterm goes fullscreen
+" ==============================================
+augroup FixProportionsOnResize
+  au!
+  au VimResized * exe "normal! \<c-w>="
+augroup END
+
+" Vim mode-switch lag fix
+" ===============================
+if ! has("gui_running")
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+" Macos vs linux clipboard
+" ===============================
+if has("mac")
+  set clipboard+=unnamed
+else
+  set clipboard=unnamedplus
+endif
+
+" Make C-a, C-x work properly
+" ===============================
+set nrformats=
+
+" Potential lag fix
+" ===============================
+let g:matchparen_insert_timeout=1
+
+" Fix bufexplorer bug with hidden
+" ===============================
+let g:bufExplorerFindActive=0
+
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+set completeopt=longest,menuone
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+
+
+"*******************************
+"*******************************
+" CONFIGS, MAPPINGS           **
+"*******************************
+"*******************************
+
+" rm file
+" ===============================
+nnoremap <leader>rm :Remove<cr>
+let g:hardtime_showmsg = 1
+
+" vim-to-cterm
+" ===============================
+nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
+
+" php cs fixer
+" ===============================
+autocmd FileType php nnoremap <leader>pff  :call PhpCsFix('%')<cr>
+autocmd FileType php nnoremap <leader>pfaf :call PhpCsFix('.')<cr>
+
+" php use
+" ===============================
+nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+
+" php-getter-setter
+" ===============================
+autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
+autocmd FileType php nnoremap <leader>ps :InsertSetterOnly<cr>
+autocmd FileType php nnoremap <leader>pgs :InsertBothGetterSetter<cr>
+
+let b:phpgetset_setterTemplate =
+  \ "\n" .
+  \ "    public function %funcname%($%varname%)\n" .
+  \ "    {\n" .
+  \ "        $this->%varname% = $%varname%;\n" .
+  \ "    }"
+
+let b:phpgetset_getterTemplate =
+    \ "\n" .
+    \ "    public function %funcname%()\n" .
+    \ "    {\n" .
+    \ "        return $this->%varname%;\n" .
+    \ "    }"
+
+" Tabular
+" ===============================
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_messages = {'level': 'warning'}
+" let g:syntastic_php_checkers=['php', 'phpcs']
+" let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
+let g:syntastic_php_phpcs_args='--standard=PSR2'
+" syntastic is too slow for haml and sass
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['haml','scss','sass'] }
+
+
+nnoremap a= :Tabularize /=<CR>
+vnoremap a= :Tabularize /=<CR>
+nnoremap a: :Tabularize /:\zs<CR>
+vnoremap a: :Tabularize /:\zs<CR>
+nnoremap ar :Tabularize /=><CR>
+vnoremap ar :Tabularize /=><CR>
+
+" Ultisnips
+" ===============================
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+let g:snips_author="Milan Arandjelovic"
+
+" Sparkup
+" ===============================
+let g:sparkupExecuteMapping = '<C-Y>,'
+let g:sparkupNextMapping = '<c-y>n'
+
+" gits
+" ===============================
+if has("mac")
+  let g:gist_clip_command = 'pbcopy'
+elseif has("unix")
+  let g:gist_clip_command = 'xclip -selection clipboard'
+endif
+
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+" does not work right after the plugin
+nnoremap <leader>wa :call argumentrewrap#RewrapArguments()<CR>
+
+" rails.vim
+" ===============================
+nnoremap <leader>av :AV<cr>
+nnoremap <leader>as :AS<cr>
+nnoremap <Leader>va :AV<cr>
+nnoremap <Leader>sa :AS<cr>
+nnoremap <Leader>vc :RVcontroller<cr>
+nnoremap <Leader>sc :RScontroller<cr>
+nnoremap <Leader>vu :RVunittest<CR>
+nnoremap <Leader>su :RSunittest<CR>
+nnoremap <Leader>vv :RVview<cr>
+nnoremap <Leader>sv :RSview<cr>
+nnoremap <Leader>m :Rmodel<cr>
+nnoremap <Leader>sm :RSmodel<cr>
+nnoremap <Leader>vm :RVmodel<cr>
+
+" ag.vim
+" ===============================
+nnoremap g/ :Ag!<space>
+nnoremap g# :Ag! -w <C-R><C-W><space>
+nnoremap ga :AgAdd!<space>
+nnoremap gn :cnext<CR>
+nnoremap gp :cprev<CR>
+nnoremap gq :ccl<CR>
+nnoremap gl :cwindow<CR>
+
+" Fugitive
+" ===============================
+autocmd BufReadPost fugitive://* set bufhidden=delete
+nnoremap <Leader>gac :Gcommit -am ""<LEFT>
+nnoremap <Leader>gc :Gcommit -m ""<LEFT>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>gb :Gblame<cr>
+
+" Hardtime
+" ===============================
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardTimeOn()
+nnoremap <leader>h <Esc>:call HardTimeToggle()<CR>
+let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
+
+" Nerdtree
+" ===============================
+nnoremap <C-b> :NERDTreeToggle<CR>
+
+" Vim test
+" ===============================
+nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>T :TestFile<CR>
+nnoremap <silent> <leader>at :TestSuite<CR>
+nnoremap <silent> <leader>lt :TestLast<CR>
+nnoremap <silent> <leader>gt :TestVisit<CR>
+
+let test#ruby#spec_framework = "minitest"
+let test#ruby#minitest#file_pattern = '_\(spec\|test\)\.rb'
+nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
+
+let g:test#javascript#jasmine#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
+
+
+" Powerline for vim
+" ===============================
+set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
+
+" Installing powerline fonts
+" ===============================
+" wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+" wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+" mv PowerlineSymbols.otf /usr/share/fonts/
+" fc-cache -vf /usr/share/fonts/
+" mv 10-powerline-symbols.conf /etc/fonts/conf.d/
