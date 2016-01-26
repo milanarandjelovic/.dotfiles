@@ -5,3 +5,4 @@ vim/Vundle.vim
 vim/vim
 composer
 vim/flavors
+.idea/
