@@ -3,7 +3,7 @@ source ~/.vim/functions.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
+" Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -540,7 +540,7 @@ endfunction
 
 "*******************************
 "*******************************
-" BUG WORKAROUNDS	      **
+" BUG WORKAROUNDS	            **
 "*******************************
 "*******************************
 
@@ -603,16 +603,16 @@ let g:hardtime_showmsg = 1
 " ===============================
 nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
 
-" php cs fixer
+" PHP cs fixer
 " ===============================
 autocmd FileType php nnoremap <leader>pff  :call PhpCsFix('%')<cr>
 autocmd FileType php nnoremap <leader>pfaf :call PhpCsFix('.')<cr>
 
-" php use
+" PHP use
 " ===============================
 nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 
-" php-getter-setter
+" PHP-getter-setter
 " ===============================
 autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
 autocmd FileType php nnoremap <leader>ps :InsertSetterOnly<cr>
