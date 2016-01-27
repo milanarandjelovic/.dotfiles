@@ -65,8 +65,8 @@ mecho "Installing composer..."
   sudo mv composer.phar /usr/bin
   sudo ln -s /usr/bin/composer.phar /usr/bin/composer
   
-echo "Installing laravel..."
-composer global require "laravel/installer"
+mecho "Installing laravel..."
+  composer global require "laravel/installer"
 
 mecho "Installing silversearcher-ag, tmux, ctags"
   sudo apt-get install -y silversearcher-ag tmux ctags
