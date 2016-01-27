@@ -1,6 +1,7 @@
 # Install .dotfiles
 ```
 git clone https://github.com/milanarandjelovic/.dotfiles.git ~/.dotfiles
+./install.sh 
 ```
 
 ## Install Ruby on Rails
