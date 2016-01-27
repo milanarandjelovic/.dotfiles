@@ -62,9 +62,9 @@ mecho "Installing php5-dev, pear, xdebug..."
 
 mecho "Installing composer..."
   curl -sS https://getcomposer.org/installer | php
-  sudo mv composer.phar /usr/bin
-  sudo ln -s /usr/bin/composer.phar /usr/bin/composer
-  
+  sudo mv composer.phar /usr/local/bin/composer
+  sudo chmod +x /usr/local/bin/composer
+
 mecho "Installing laravel..."
   composer global require "laravel/installer"
 
@@ -86,3 +86,9 @@ mecho "Installing oh-my-zsh..."
 mecho "Setting shell to zshell..."
   chsh -s `which zsh`
 
+mecho "Installing powerline fonts"
+  wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+  wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+  sudo mv PowerlineSymbols.otf /usr/share/fonts/
+  sudo fc-cache -vf /usr/share/fonts/
+  sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
