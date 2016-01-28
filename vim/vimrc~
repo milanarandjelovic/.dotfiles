@@ -175,7 +175,6 @@ set splitright
 set tabpagemax=20
 set tags+=./tags.vendors,tags.vendors
 set ttyfast
-set ts=4 sts=4 sw=4 noexpandtab
 
 set statusline=%f       " file name
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
