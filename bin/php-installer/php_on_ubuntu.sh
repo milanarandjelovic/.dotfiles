@@ -25,6 +25,10 @@ mecho "Installing vim-gnome..."
 
 mecho "Installing git..."
   sudo apt-get install -y git
+  
+mecho "Instaling php-mcrypt"
+  sudo apt-get install php5-mcrypt
+  sudo php5enmod mcrypt
 
 mecho "Installing mysql-server..."
   sudo apt-get install -y mysql-server mysql-client
