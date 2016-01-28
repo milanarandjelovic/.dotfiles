@@ -2,7 +2,7 @@
 alias l='ls -alF'
 
 # Tmux
-alias tmux='tmux -2'
+alias tm='tmux -2'
 
 # git
 alias gs='git status -s'
