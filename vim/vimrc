@@ -13,7 +13,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 
-" Colors
+" ColorsPlugin 'MarcWeber/vim-addon-managr
 " ===============================
 Plugin 'flazz/vim-colorschemes'
 Plugin 'jonathanfilip/vim-lucius'
@@ -103,17 +103,20 @@ Plugin 'NagatoPain/AutoSQLUpperCase.vim'
 " ===============================
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'MarcWeber/vim-addon-manager'
 Plugin 'tomtom/tlib_vim'
 
 " Snippets
 " ===============================
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
+" To ignore plugin indent changes instead use:
 "filetype plugin on
 
 " Brief help
@@ -735,6 +738,18 @@ nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
 
 let g:test#javascript#jasmine#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
 
+"Setup for vim-addon-manager
+" ===============================
+set runtimepath+=/path/to/vim
+" If you need a plugin to be activated immediately. Example: You require a command in your .vimrc:
+call vam#ActivateAddons(['vim-snippets','snipmate'], {'force_loading_plugins_now': 1})
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " Powerline for vim
 " ===============================
