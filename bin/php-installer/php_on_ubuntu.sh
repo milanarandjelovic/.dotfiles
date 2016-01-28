@@ -89,6 +89,6 @@ mecho "Setting shell to zshell..."
 mecho "Installing powerline fonts"
   wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
   wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-  sudo mv PowerlineSymbols.otf /usr/share/fonts/
-  sudo fc-cache -vf /usr/share/fonts/
-  sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+  mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
+  fc-cache -vf ~/.fonts
+  mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
