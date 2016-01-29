@@ -175,6 +175,7 @@ set splitright
 set tabpagemax=20
 set tags+=./tags.vendors,tags.vendors
 set ttyfast
+set ts=4 sts=4 sw=4 noexpandtab
 
 set statusline=%f       " file name
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
@@ -226,6 +227,10 @@ augroup END
 syntax on
 colorscheme solarized
 set background=dark
+"let g:molokai_original=1
+"let g:rehash256=1
+set t_Co=256
+"colorscheme molokai
 
 " Session management
 " ===============================

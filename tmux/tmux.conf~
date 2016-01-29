@@ -24,7 +24,7 @@ set -g mouse-select-window on
 bind-key v split-window -h
 bind-key h split-window -v
 
-set -g default-terminal "screen-256color"
+set-option -g default-terminal "screen-256color"
 
 # Statusbar configuration for tmux that looks like vim-powerline and consist of dynamic segments
 # git clone https://github.com/erikw/tmux-powerline.git
