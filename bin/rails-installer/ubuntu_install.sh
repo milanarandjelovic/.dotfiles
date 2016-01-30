@@ -28,14 +28,10 @@ mecho "Adding rvm path to the ~/.bashrc file ..."
   source ~/.dotfiles/shells/rvm.sh
 
 mecho "Installing critical Ruby gems for Rails development ..."
-<<<<<<< HEAD
   sudo gem install rails --no-rdoc --no-ri
   sudo gem install bundler--no-rdoc --no-ri
   sudo gem install pg --no-rdoc --no-ri
   sudo gem install foreman --no-rdoc --no-ri
   sudo gem install thin --no-rdoc --no-ri
 
-
-=======
   gem install bundler rails pg foreman thin --no-rdoc --no-ri
->>>>>>> 56b09a1fc0ba12babea9decd49e0638ca694a26b
