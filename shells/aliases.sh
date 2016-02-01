@@ -1,6 +1,7 @@
 # Aliases.
 #==============================
 alias l='ls -alF'
+alias rm='sudo rm -r'
 
 # Tmux
 #==============================
@@ -9,10 +10,10 @@ alias tm='tmux -2'
 # git
 #==============================
 alias gst='git status -s'
-alias gc='git commit -m'
+alias gcm='git commit -m'
 alias ga='git add'
 alias gaa='git add -A'
-alias gp='git push -u origin master'
+alias gpm='git push -u origin master'
 alias gpr='git pull --rebase'
 alias gpu='git pull'
 
