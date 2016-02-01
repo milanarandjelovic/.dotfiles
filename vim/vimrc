@@ -249,6 +249,12 @@ nnoremap <leader>1 :GundoToggle<CR>
 nnoremap <leader>3 :TlistToggle<CR>
 nnoremap <leader>4 :TagbarToggle<CR>
 
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+
 " Visual reselect of just pasted
 " ===============================
 nnoremap gp `[v`]
