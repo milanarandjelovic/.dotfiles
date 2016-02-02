@@ -21,7 +21,7 @@ Plugin 'jonathanfilip/vim-lucius'
 " Vim main plugins
 " ===============================
 Plugin 'sjl/gundo.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tomtom/tcomment_vim'
@@ -58,6 +58,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'janko-m/vim-test'
 Plugin 'mattn/gist-vim.git'
 Plugin 'mattn/webapi-vim.git'
+Plugin 'ryanoasis/vim-devicons'
 
 " PHP
 " ===============================
@@ -80,7 +81,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim' 
 
 " Language vundles
 " ===============================
@@ -206,6 +207,39 @@ set undofile
 set history=100
 set undolevels=100
 
+set encoding=utf8
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:webdevicons_enable_ctrlp = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
+
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
+
 " Set <leader>
 " ===============================
 let mapleader=","
@@ -226,6 +260,7 @@ augroup END
 " ===============================
 syntax on
 colorscheme solarized
+"colorscheme  material-theme
 set background=dark
 "let g:molokai_original=1
 "let g:rehash256=1
@@ -294,7 +329,7 @@ let g:ctrlp_map = "<c-p>"
 nnoremap <leader>t :CtrlPMRU<CR>
 nnoremap <leader>bp :CtrlPBuffer<CR>
 
-let g:ctrlp_max_height = 30
+let g:ctrlp_max_height = 20
 let g:ctrlp_show_hidden = 1
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
@@ -411,7 +446,7 @@ nnoremap <leader>a :Ag!
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
+let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
 
 " Vim-go bindings
 " ===============================
@@ -769,7 +804,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Powerline for vim
 " ===============================
-set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set  rtp+=/usr/local/lib/python3.4/dist-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 

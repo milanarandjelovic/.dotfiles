@@ -78,6 +78,8 @@ LESS='-R -g -w'
 stty start undef
 stty stop undef
 
+export TERM="screen-256color"
+
 source ~/.dotfiles/shells/rvm.sh
 source ~/.dotfiles/shells/configs.sh
 source ~/.dotfiles/shells/zsh/functions.zsh
