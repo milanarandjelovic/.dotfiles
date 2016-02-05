@@ -259,8 +259,10 @@ augroup END
 " Syntax highlighting
 " ===============================
 syntax on
-colorscheme solarized
-"colorscheme  material-theme
+"colorscheme solarized
+colorscheme hybrid_material
+let g:airline_theme = "hybrid"
+let g:enable_bold_font = 1
 set background=dark
 "let g:molokai_original=1
 "let g:rehash256=1
@@ -275,6 +277,9 @@ let g:session_autosave = "no"
 let g:session_command_aliases = 1
 nnoremap <leader>so :OpenSession 
 nnoremap <leader>ss :SaveSession 
+
+
+
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
