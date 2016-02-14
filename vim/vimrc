@@ -270,6 +270,13 @@ if exists("+relativenumber")
 endif
 " }}}
 
+" vim-devicons   ----------------------------------------------------------{{{ 
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_ctrlp = 1
+" }}}
 
 " Backup/persistance settings   ----------------------------------------------------------{{{
 set undodir=~/.vim/tmp/undo//
@@ -830,7 +837,13 @@ autocmd BufNewFile,BufRead *.json set ai filetype=javascript
 autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
-
+autocmd BufRead,BufNewFile *.html setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.css setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.scss setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.sass setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.less setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.html.erb setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.rb setlocal spell spelllang=en_us,pt_br
 
 " Improved highlight for php: https://github.com/StanAngeloff/php.vim
 function! PhpSyntaxOverride()
