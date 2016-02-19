@@ -237,7 +237,6 @@ set noshowmode
 set cmdheight=1
 set autoread
 display=lastline
-set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 set foldlevel=1
 set foldmethod=syntax
 set nobackup
@@ -250,7 +249,6 @@ set splitright
 set tabpagemax=20
 set tags+=./tags.vendors,tags.vendors
 set ttyfast
-set ts=4 sts=4 sw=4 noexpandtab
 set mouse=a " Enable mouse
 
 set statusline=%f       " file name

@@ -9,7 +9,7 @@ alias tm='tmux -2'
 
 # git
 #==============================
-alias gst='git status -s'
+alias gst='git status'
 alias gcm='git commit -m'
 alias ga='git add'
 alias gaa='git add -A'
