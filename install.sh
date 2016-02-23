@@ -35,10 +35,15 @@ function symlink_safe() {
     ln -sf $1 $2
   fi
 }
+
+symlink_or_ask ~/.dotfiles/shells/bashrc ~/.bash_profile
+symlink_or_ask ~/.dotfiles/shells/bashrc ~/.bashrc
 symlink_or_ask ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 symlink_or_ask ~/.dotfiles/ruby/irbrc ~/.irbrc
 symlink_or_ask ~/.dotfiles/vim ~/.vim
 symlink_or_ask ~/.dotfiles/vim/vimrc ~/.vimrc
+symlink_or_ask ~/.dotfiles/nvim ~/.nvim
+symlink_or_ask ~/.dotfiles/nvim/nvimrc ~/.nvimrc
 symlink_or_ask ~/.dotfiles/ctags ~/.ctags
 symlink_or_ask ~/.dotfiles/agignore ~/.agignore
 symlink_or_ask ~/.dotfiles/composer ~/.composer
@@ -46,6 +51,10 @@ symlink_or_ask ~/.dotfiles/composer ~/.composer
 # Install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +PluginClean +PluginClean +quitall
+
+# Install neobundle
+git clone https://github.com/Shougo/neobundle.vim ~/.nvim/bundle/neobundle.vim
+nvim +NeoBundleInstall +quitall
 
 # Install oh-my-zs
 if [ ! -d ~/.oh-my-zsh  ]; then
