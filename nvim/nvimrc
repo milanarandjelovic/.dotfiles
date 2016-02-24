@@ -1,21 +1,18 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
 " Setup NeoBundle  ----------------------------------------------------------{{{
 " Note: Skip initialization for vim-tiny or vim-small.
 
-if 0 | endif
+" If vundle is not installed, do it first
+  if (!isdirectory(expand("$HOME/.config/nvim/bundle/neobundle.vim")))
+     call system(expand("mkdir -p $HOME/.confg/nvim/bundle"))
+     call system(expand("git clone https://github.com/Shougo/neobundle.vim $HOME/.config/nvim/bundle/neobundle.vim"))
+  endif
 
-if has('vim_starting')
-    if &compatibile
-       set nocompatibile
-       endif
-endif
-
-" Required:
-set runtimepath+=~/.nvim/bundle/neobundle.vim/
+set nocompatible
 
 " Required:
-call neobundle#begin(expand('~/.nvim/bundle/'))
+set runtimepath+=~/.config/nvim/bundle/neobundle.vim
+" Required:
+call neobundle#begin(expand('~/.config/nvim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -50,7 +47,7 @@ NeoBundle 'dsawardekar/wordpress.vim'
 "NeoBundle 'm2mdas/phpcomplete-extended'
 
 " Laravel
-NeoBundle 'm2mdas/phpcomplete-extended-laravel'
+"NeoBundle 'm2mdas/phpcomplete-extended-laravel'
 NeoBundle 'xsbeats/vim-blade'
 
 " Javascript
@@ -180,7 +177,7 @@ NeoBundle 'shawncplus/Vim-toCterm'
 "NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'janko-m/vim-test'
-NeoBundle 'mattn/webapi-vim.gi'
+"NeoBundle 'mattn/webapi-vim.gi'
 NeoBundle 'ryanoasis/vim-devicons'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'ashisha/image.vim'

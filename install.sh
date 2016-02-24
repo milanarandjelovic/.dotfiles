@@ -38,15 +38,23 @@ function symlink_safe() {
 
 symlink_or_ask ~/.dotfiles/shells/bashrc ~/.bash_profile
 symlink_or_ask ~/.dotfiles/shells/bashrc ~/.bashrc
+
 symlink_or_ask ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 symlink_or_ask ~/.dotfiles/ruby/irbrc ~/.irbrc
 symlink_or_ask ~/.dotfiles/vim ~/.vim
 symlink_or_ask ~/.dotfiles/vim/vimrc ~/.vimrc
-symlink_or_ask ~/.dotfiles/nvim ~/.nvim
-symlink_or_ask ~/.dotfiles/nvim/nvimrc ~/.nvimrc
 symlink_or_ask ~/.dotfiles/ctags ~/.ctags
 symlink_or_ask ~/.dotfiles/agignore ~/.agignore
 symlink_or_ask ~/.dotfiles/composer ~/.composer
+
+
+# Fixes nvim config
+# https://github.com/neovim/neovim/issues/3499
+# https://github.com/ZyX-I/neovim/blob/42047acb4f07c689936b051864c6b4448b1b6aa1/runtime/doc/nvim_from_vim.txt#L12-L18
+if [[ -d ~/.config ]]; then
+  symlink_or_ask ~/.nvim ~/.config/nvim
+  symlink_or_ask ~/.nvimrc ~/.config/nvim/init.vim
+fi
 
 # Install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
