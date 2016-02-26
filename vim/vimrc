@@ -89,8 +89,8 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'dsawardekar/wordpress.vim'
 
 " Laravel
-NeoBundle 'm2mdas/phpcomplete-extended-laravel'
-NeoBundle 'xsbeats/vim-blade'
+Plugin 'm2mdas/phpcomplete-extended-laravel'
+Plugin 'xsbeats/vim-blade'
 
 " Ruby on Rails
 Plugin 'vim-scripts/ruby-matchit'
