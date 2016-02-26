@@ -43,6 +43,8 @@ symlink_or_ask ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 symlink_or_ask ~/.dotfiles/ruby/irbrc ~/.irbrc
 symlink_or_ask ~/.dotfiles/vim ~/.vim
 symlink_or_ask ~/.dotfiles/vim/vimrc ~/.vimrc
+symlink_or_ask ~/.dotfiles/nvim ~/.nvim
+symlink_or_ask ~/.dotfiles/nvim/nvimrc ~/.nvimrc
 symlink_or_ask ~/.dotfiles/ctags ~/.ctags
 symlink_or_ask ~/.dotfiles/agignore ~/.agignore
 symlink_or_ask ~/.dotfiles/composer ~/.composer

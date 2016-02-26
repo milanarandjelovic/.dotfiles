@@ -89,7 +89,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'dsawardekar/wordpress.vim'
 
 " Laravel
-Plugin 'm2mdas/phpcomplete-extended-laravel'
+"Plugin 'm2mdas/phpcomplete-extended-laravel'
 Plugin 'xsbeats/vim-blade'
 
 " Ruby on Rails
@@ -145,6 +145,7 @@ Plugin 'rhysd/github-complete.vim'
 Plugin 'junegunn/vim-github-dashboard'
 
 " Untils
+
 Plugin 'benekastah/neomake'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'AndrewRadev/switch.vim'
