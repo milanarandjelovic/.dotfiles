@@ -1,175 +1,131 @@
 source ~/.vim/functions.vim
+" Setup NeoBundle  ----------------------------------------------------------{{{
+" Note: Skip initialization for vim-tiny or vim-small.
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" If vundle is not installed, do it first
+  if (!isdirectory(expand("$HOME/.vim/bundle/neobundle.vim")))
+     call system(expand("mkdir -p $HOME/.vim/bundle"))
+     call system(expand("git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim"))
+  endif
 
-" Setup Vundle  ----------------------------------------------------------{{{
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+set nocompatible
 
-" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
 
 
 " Colorschemes
-Plugin 'flazz/vim-colorschemes'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'mhartington/oceanic-next'
-Plugin 'ujihisa/unite-colorscheme'
-
-
-" Other plugins
-Plugin 'sjl/gundo.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
-Plugin 'edsono/vim-matchit'
-Plugin 'henrik/vim-indexed-search'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-repeat'
-Plugin 'yukunlin/auto-pairs'
-Plugin 'xolox/vim-session'
-Plugin 'xolox/vim-misc'
-Plugin 'godlygeek/tabular'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'rhysd/clever-f.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'ervandew/supertab'
-Plugin 'austintaylor/vim-commaobject'
-Plugin 'tristen/vim-sparkup'
-Plugin 'takac/vim-hardtime'
-Plugin 'weierophinney/argumentrewrap'
-Plugin 'joonty/vdebug'
-Plugin 'shawncplus/Vim-toCterm'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-speeddating'
-Plugin 'janko-m/vim-test'
-Plugin 'mattn/webapi-vim.git'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'Raimondi/delimitMate'
-Plugin 'ashisha/image.vim'
-Plugin 'junegunn/limelight.vim'
-
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'mhartington/oceanic-next'
+NeoBundle 'ujihisa/unite-colorscheme'
 
 " HTML
-Plugin 'othree/html5.vim'
-
+NeoBundle 'othree/html5.vim'
 
 " CSS
-Plugin 'mutewinter/vim-css3-syntax'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-haml'
-
-" Javascript
-Plugin 'othree/yajs.vim'
-Plugin 'othree/es.next.syntax.vim'
-Plugin '1995eaton/vim-better-javascript-completion'
-Plugin 'tobinvanpelt/vim-coffee-script'
-Plugin 'curist/vim-angular-template'
-Plugin 'elzr/vim-json', {'autoload':{'filetypes':['json']}}
-Plugin 'ruanyl/vim-fixmyjs'
-
-
-" Typescript
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'Quramy/tsuquyomi'
-
+"NeoBundle 'mutewinter/vim-css3-syntax'
+NeoBundle 'groenewege/vim-less'
+"NeoBundle 'tpope/vim-haml'
 
 " PHP
-Plugin 'StanAngeloff/php.vim'
-Plugin 'captbaritone/better-indent-support-for-php-with-html'
-Plugin 'arnaud-lb/vim-php-namespace'
-"Plugin 'docteurklein/php-getter-setter.vim'
-Plugin 'shawncplus/phpcomplete.vim'
-"Plugin 'm2mdas/phpcomplete-extended'
-Plugin 'dsawardekar/wordpress.vim'
+NeoBundle 'StanAngeloff/php.vim'
+NeoBundle 'captbaritone/better-indent-support-for-php-with-html'
+NeoBundle 'arnaud-lb/vim-php-namespace'
+NeoBundle 'shawncplus/phpcomplete.vim'
+NeoBundle 'dsawardekar/wordpress.vim'
+"NeoBundle 'docteurklein/php-getter-setter.vim'
+"NeoBundle 'm2mdas/phpcomplete-extended'
 
 " Laravel
-"Plugin 'm2mdas/phpcomplete-extended-laravel'
-Plugin 'xsbeats/vim-blade'
+"NeoBundle 'm2mdas/phpcomplete-extended-laravel'
+NeoBundle 'xsbeats/vim-blade'
+
+" Javascript
+NeoBundle 'othree/yajs.vim'
+NeoBundle 'othree/es.next.syntax.vim'
+NeoBundle '1995eaton/vim-better-javascript-completion'
+NeoBundle 'tobinvanpelt/vim-coffee-script'
+NeoBundle 'curist/vim-angular-template'
+NeoBundle 'ruanyl/vim-fixmyjs'
+NeoBundle 'elzr/vim-json', {'autoload':{'filetypes':['json']}}
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+
+" Typescript
+NeoBundle 'HerringtonDarkholme/yats.vim'
+NeoBundle 'Quramy/tsuquyomi'
 
 " Ruby on Rails
-Plugin 'vim-scripts/ruby-matchit'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'thoughtbot/vim-rspec'
+"NeoBundle 'vim-scripts/ruby-matchit'
+"NeoBundle 'vim-ruby/vim-ruby'
+"NeoBundle 'tpope/vim-rails'
+"NeoBundle 'thoughtbot/vim-rspec'
 
 " Togglable panels
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-vinegar'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'ctrlpvim/ctrlp.vim' 
-
-
-" Language vundles
-Plugin 'pangloss/vim-javascript'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-
-
-Plugin 'fatih/vim-go'
-" Plugin 'klen/python-mode'
-Plugin 'vim-scripts/c.vim'
-
-
-" Markdown
-Plugin 'tpope/vim-markdown'
-Plugin 'suan/vim-instant-markdown'
-
-
-" Databases
-Plugin 'vim-scripts/SQLUtilities'
-Plugin 'NagatoPain/AutoSQLUpperCase.vim'
-
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-vinegar'
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 " Autocomplete
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'MarcWeber/vim-addon-manager'
-Plugin 'tomtom/tlib_vim'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'MarcWeber/vim-addon-manager'
+NeoBundle 'tomtom/tlib_vim'
 
+" Snippets
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'garbas/vim-snipmate'
 
 " Git helpers
-Plugin 'tpope/vim-fugitive'
-Plugin 'jreybert/vimagit'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'https://github.com/jaxbot/github-issues.vim'
-Plugin 'mattn/gist-vim.git'
-Plugin 'rhysd/github-complete.vim'
-Plugin 'junegunn/vim-github-dashboard'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'jreybert/vimagit'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'https://github.com/jaxbot/github-issues.vim'
+NeoBundle 'mattn/gist-vim.git'
+NeoBundle 'rhysd/github-complete.vim'
+NeoBundle 'junegunn/vim-github-dashboard'
 
 " Untils
-
-Plugin 'benekastah/neomake'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'gorodinskiy/vim-coloresque'
-
+NeoBundle 'benekastah/neomake'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'tmux-plugins/vim-tmux'
+NeoBundle 'tmux-plugins/vim-tmux-focus-events'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'gorodinskiy/vim-coloresque'
 
 " Shougo
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/unite-outline'
-Plugin 'Shougo/vimfiler.vim'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'Shougo/neco-vim'
-Plugin 'Shougo/neoinclude.vim'
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'Shougo/vimproc.vim', {
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/deoplete.nvim'
+NeoBundle 'Shougo/neco-vim'
+NeoBundle 'Shougo/neoinclude.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
 \     'cygwin' : 'make -f make_cygwin.mak',
@@ -179,42 +135,72 @@ Plugin 'Shougo/vimproc.vim', {
 \    },
 \ }
 
-
-" Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'garbas/vim-snipmate'
-
-
 " Indent Line
-Plugin 'Yggdroot/indentLine'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Valloric/MatchTagAlways'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Valloric/MatchTagAlways'
 
+" Markdown
+"NeoBundle 'tpope/vim-markdown'
+NeoBundle 'suan/vim-instant-markdown'
+
+" Databases
+"NeoBundle 'im-scripts/SQLUtilities'
+NeoBundle 'NagatoPain/AutoSQLUpperCase.vim'
 
 " fzf
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf' }
-Plugin 'junegunn/fzf.vim'
+NeoBundle 'junegunn/fzf.vim'
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
+
+" Other plugins
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'jlanzarotta/bufexplorer'
+NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'edsono/vim-matchit'
+NeoBundle 'henrik/vim-indexed-search'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'yukunlin/auto-pairs'
+NeoBundle 'xolox/vim-session'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'austintaylor/vim-commaobject'
+NeoBundle 'tristen/vim-sparkup'
+NeoBundle 'takac/vim-hardtime'
+NeoBundle 'weierophinney/argumentrewrap'
+NeoBundle 'joonty/vdebug'
+NeoBundle 'shawncplus/Vim-toCterm'
+"NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'janko-m/vim-test'
+"NeoBundle 'mattn/webapi-vim.gi'
+NeoBundle 'ryanoasis/vim-devicons'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'ashisha/image.vim'
+NeoBundle 'junegunn/limelight.vim'
+
+NeoBundle 'fatih/vim-go'
+"NeoBundle 'klen/python-mode'
+NeoBundle 'vim-scripts/c.vim'
 
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes instead use:
-"filetype plugin on
+call neobundle#end()
 
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+    " this will conveniently prompt you to install them.
+NeoBundleCheck
 " }}}
 
-
-" SETTINGS & KEYBINDINGS  ----------------------------------------------------------{{{
+" Settings & Keybindings  ----------------------------------------------------------{{{
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set smarttab
 set autoindent
@@ -241,7 +227,6 @@ set wildmode=list:longest,full
 set noshowmode
 set cmdheight=1
 set autoread
-display=lastline
 set foldlevel=1
 set foldmethod=syntax
 set nobackup
@@ -255,21 +240,22 @@ set tabpagemax=20
 set tags+=./tags.vendors,tags.vendors
 set ttyfast
 set mouse=a " Enable mouse
+display=lastline
 
-set statusline=%f       " file name
+set statusline=%f                               " file name
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] " file format
-set statusline+=%h      " help file flag
-set statusline+=%m      " modified flag
-set statusline+=%r      " read only flag
-set statusline+=%y      " filetype
-set statusline+=%=      " left/right separator
-set statusline+=%c,     " cursor column
-set statusline+=%l/%L   " cursor line/total lines
-set statusline+=\ %P    " percent through file
+set statusline+=%{&ff}]                         " file format
+set statusline+=%h                              " help file flag
+set statusline+=%m                              " modified flag
+set statusline+=%r                              " read only flag
+set statusline+=%y                              " filetype
+set statusline+=%=                              " left/right separator
+set statusline+=%c,                             " cursor column
+set statusline+=%l/%L                           " cursor line/total lines
+set statusline+=\ %P                            " percent through file
 
 if exists("+relativenumber")
-  set relativenumber
+    set relativenumber
 endif
 " }}}
 
@@ -288,7 +274,6 @@ set writebackup
 set noswapfile
 " }}}
 
-
 " Persist (g)undo tree between sessions   ----------------------------------------------------------{{{
 set undofile
 set history=100
@@ -300,7 +285,6 @@ let g:webdevicons_enable_airline_statusline = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
 " }}}
-
 
 " Fold, gets it's own section  ----------------------------------------------{{{
 
@@ -319,6 +303,14 @@ function! MyFoldText() " {{{
     let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
     return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
 endfunction " }}}
+
+function! JavaScriptFold() "{{{
+  " syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+  setlocal foldmethod=syntax
+  setlocal foldlevel=99
+  echo "hello"
+  syn region foldBraces start=/{/ skip=/\(\/\/.*\)\|\(\/.*\/\)/ end=/}/ transparent fold keepend extend
+endfunction "}}}
 
 function! JavaScriptFold() "{{{
   " syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
@@ -399,7 +391,6 @@ call NERDTreeHighlightFile('gitconfig', 'black', 'none', '#686868', 'none')
 call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
 "}}}
 
-
 " Snipppets -----------------------------------------------------------------{{{
 " Enable snipMate compatibility feature.
   let g:neosnippet#enable_snipmate_compatibility = 1
@@ -416,9 +407,7 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
   smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
   \ "\<Plug>(neosnippet_expand_or_jump)"
   \: "\<TAB>"
-
 "}}}
-
 
 " Typescript & Javscript omni complete --------------------------------------{{{
   let g:vimjs#casesensistive = 1
@@ -437,7 +426,6 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
                 \'^\s*@[A-Z][a-z]'
                 \]
 "}}}
-
 
 " Emmet customization -------------------------------------------------------{{{
 " Enable Emmet in all modes
@@ -466,7 +454,6 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
    let g:user_emmet_install_global = 0
    autocmd FileType html,css,ejs EmmetInstall
 "}}}
-
 
 " Git from unite...ERMERGERD ------------------------------------------------{{{
 let g:unite_source_menu_menus = {} " Useful when building interfaces at appropriate places
@@ -505,11 +492,9 @@ let g:unite_source_menu_menus.git = {
   nnoremap <silent> <Leader>g :Unite -direction=botright -silent -buffer-name=git -start-insert menu:git<CR>
 "}}}
 
-
 " Set <leader>  ----------------------------------------------------------{{{
 let mapleader=","
 "}}}
-
 
 " Show trailing whitespaces   ----------------------------------------------------------{{{
 "set list
@@ -520,7 +505,6 @@ let mapleader=","
 "    autocmd ColorScheme * hi! link SpecialKey Normal
 "augroup END
 "}}}
-
 
 " Syntax highlighting   ----------------------------------------------------------{{{
 syntax on
@@ -540,7 +524,6 @@ hi CursorLineNR guifg=#ffffff
 hi SpellBad guibg=#ff2929 guifg=#ffffff" ctermbg=224
 "}}}
 
-
 " Session management   ----------------------------------------------------------{{{
 " let g:session_directory = "~/.vim/session"
 let g:session_autoload = "no"
@@ -552,13 +535,11 @@ nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 "}}}
 
-
 " Togglables without FN keys   ----------------------------------------------------------{{{
 nnoremap <leader>1 :GundoToggle<CR>
 nnoremap <leader>3 :TlistToggle<CR>
 nnoremap <leader>4 :TagbarToggle<CR>
 "}}}
-
 
 " Disable the arrow key   ----------------------------------------------------------{{{   
 noremap <Up> <NOP>
@@ -571,40 +552,33 @@ inoremap <Up> <nop>
 inoremap <Down> <nop>
 "}}}
 
-
 " Visual reselect of just pasted   ----------------------------------------------------------{{{
 nnoremap gp `[v`]
 "}}}
-
 
 " Make enter break and do newlines   ----------------------------------------------------------{{{
 nnoremap <CR> O<Esc>j
 nnoremap <leader>j i<CR><Esc>==
 "}}}
 
-
 " Make space in normal mode add space   ----------------------------------------------------------{{{
 nnoremap <Space> i<Space><Esc>l
 "}}}
-
 
 " Better scrolling   ----------------------------------------------------------{{{
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 "}}}
 
-
 " Consistent menu navigation   ----------------------------------------------------------{{{
 inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
 "}}}
 
-
 " Intellij style autocomplete shortcut   ----------------------------------------------------------{{{
 inoremap <C-@> <C-x><C-o>
 inoremap <C-Space> <C-x><C-o>
 "}}}
-
 
 " ctrlP config   ----------------------------------------------------------{{{
 let g:ctrlp_map = "<c-p>"
@@ -623,65 +597,54 @@ let g:ctrlp_custom_ignore = {
   \ }
 "}}}
 
-
 " Easy motion rebinded   ----------------------------------------------------------{{{
 nmap <leader>f <Plug>(easymotion-f2)
 nmap <leader>F <Plug>(easymotion-F2)
 "}}}
-
 
 " Open vimrc   ----------------------------------------------------------{{{
 nnoremap <leader>v :e  ~/.nvimrc<CR>
 nnoremap <leader>V :tabnew  ~/.nvimrc<CR>
 "}}}
 
-
 " Reload all open buffers   ----------------------------------------------------------{{{
 nnoremap <leader>Ra :tabdo exec "windo e!"
 "}}}
-
 
 " Map next-previous jumps   ----------------------------------------------------------{{{
 nnoremap <leader>m <C-o>
 nnoremap <leader>. <C-i>
 "}}}
 
-
 " Keep search matches in the middle of the window.   ----------------------------------------------------------{{{
 nnoremap n nzzzv
 nnoremap N Nzzzv
 "}}}
-
 
 " Use sane regexes   ----------------------------------------------------------{{{
 nnoremap <leader>/ /\v
 vnoremap <leader>/ /\v
 "}}}
 
-
 " Use :Subvert search   ----------------------------------------------------------{{{
 nnoremap <leader>// :S /
 vnoremap <leader>// :S /
 "}}}
-
 
 " Use regular replace   ----------------------------------------------------------{{{
 nnoremap <leader>s :%s /
 vnoremap <leader>s :%s /
 "}}}
 
-
 " Use :Subvert replace   ----------------------------------------------------------{{{
 nnoremap <leader>S :%S /
 vnoremap <leader>S :%S /
 "}}}
 
-
 " clever-f prompt  ----------------------------------------------------------{{{
 let g:clever_f_show_prompt = 1
 let g:clever_f_across_no_line = 1
 "}}}
-
 
 " vim-airline ---------------------------------------------------------------{{{
 let g:airline#extensions#tabline#enabled = 1
@@ -706,7 +669,6 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 "}}}
 
-
 " Linting -------------------------------------------------------------------{{{
 function! neomake#makers#ft#javascript#eslint()
     return {
@@ -726,7 +688,6 @@ function! JscsFix()
   noremap <leader>j :JscsFix<CR>
 "}}}
 
-
 " YouCompleteMe   -------------------------------------------------------------------{{{
 let g:ycm_filetype_blacklist = {}
 let g:ycm_key_list_select_completion = []
@@ -740,12 +701,10 @@ if executable("ag")
 endif
 "}}}
 
-
 " Reload ctags   -------------------------------------------------------------------{{{   
 " sudo apt-get install exuberant-ctags
 nnoremap <leader>C :!ctags -R --fields=+l --exclude=.git --exclude=log --exclude=tmp *<CR><CR>
 "}}}
-
 
 " Git and ack stuff   -------------------------------------------------------------------{{{
 let g:gitgutter_enabled = 1
@@ -758,14 +717,12 @@ nnoremap <leader>A :!ag
 nnoremap <leader>a :Ag! 
 "}}}
 
-
 " Vim-go settings   -------------------------------------------------------------------{{{
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
 "}}}
-
 
 " Vim-go bindings   -------------------------------------------------------------------{{{
 augroup FileType go
@@ -783,7 +740,6 @@ augroup FileType go
   au FileType go nmap <leader>t <Plug>(go-test)
 augroup END
 "}}}
-
 
 " General file runners for various languages   -------------------------------------------------------------------{{{
 function! LangRunner()
@@ -803,11 +759,9 @@ endfunction
 au BufEnter * call LangRunner()
 "}}}
 
-
 " Enable angular syntax   -------------------------------------------------------------------{{{
 let g:used_javascript_libs = 'jquery,angularjs'
 "}}}
-
 
 " COOL HACKS   -------------------------------------------------------------------{{{		     
 " Make sure Vim returns to the same line when you reopen a file.
@@ -819,22 +773,17 @@ augroup line_return
         \ endif
 augroup END
 
-
 " Thorfile, Rakefile, Vagrantfile, and Gemfile are Ruby
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-
 
 " hb is handlebars
 autocmd BufNewFile,BufRead *.hb set ai filetype=handlebars
 
-
 " hbs is handlebars
 autocmd BufNewFile,BufRead *.hbs set ai filetype=handlebars
 
-
 " JSON is JS
 autocmd BufNewFile,BufRead *.json set ai filetype=javascript
-
 
 " Enable spell check
 autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
@@ -859,7 +808,6 @@ augroup phpSyntaxOverride
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
-
 " Visual Mode */# from Scrooloose
 function! s:VSetSearch()
   let temp = @@
@@ -869,7 +817,6 @@ function! s:VSetSearch()
 endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
 
 " Text Highlighter = <leader>h[1-4]
 function! HiInterestingWord(n)
@@ -906,7 +853,6 @@ hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 
 highlight search ctermfg=white ctermbg=3423513
 
-
 " Better retab
 fu! Retab()
   :retab
@@ -914,14 +860,12 @@ fu! Retab()
 endfunction
 "}}}
 
-
 " BUG WORKAROUNDS   -------------------------------------------------------------------{{{	
 " Realign buffers when iterm goes fullscreen
 augroup FixProportionsOnResize
   au!
   au VimResized * exe "normal! \<c-w>="
 augroup END
-
 
 " Vim mode-switch lag fix
 if ! has("gui_running")
@@ -933,7 +877,6 @@ if ! has("gui_running")
     augroup END
 endif
 
-
 " Macos vs linux clipboard
 if has("mac")
   set clipboard+=unnamed
@@ -941,14 +884,11 @@ else
   set clipboard=unnamedplus
 endif
 
-
 " Make C-a, C-x work properly
 set nrformats=
 
-
 " Potential lag fix
 let g:matchparen_insert_timeout=1
-
 
 " Fix bufexplorer bug with hidden
 let g:bufExplorerFindActive=0
@@ -957,7 +897,6 @@ autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 set completeopt=longest,menuone
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 "}}}
-
 
 " CONFIGS, MAPPINGS   -------------------------------------------------------------------{{{
 " rm file
@@ -968,16 +907,13 @@ let g:hardtime_showmsg = 1
 nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
 "}}}
 
-
 " PHP   -------------------------------------------------------------------{{{
 " PHP cs fixer
 autocmd FileType php nnoremap <leader>pff  :call PhpCsFix('%')<cr>
 autocmd FileType php nnoremap <leader>pfaf :call PhpCsFix('.')<cr>
 
-
 " PHP use
 nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
-
 
 " PHP-getter-setter
 autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
@@ -999,7 +935,6 @@ let b:phpgetset_getterTemplate =
     \ "    }"
 "}}}
 
-
 " Tabular   -------------------------------------------------------------------{{{
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warning'}
@@ -1019,19 +954,16 @@ nnoremap ar :Tabularize /=><CR>
 vnoremap ar :Tabularize /=><CR>
 "}}}
 
-
 " Ultisnips   -------------------------------------------------------------------{{{ 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:snips_author="Milan Arandjelovic"
 "}}}
 
-
 " Sparkup   -------------------------------------------------------------------{{{
 let g:sparkupExecuteMapping = '<C-Y>,'
 let g:sparkupNextMapping = '<c-y>n'
 "}}}
-
 
 " gits   -------------------------------------------------------------------{{{
 if has("mac")
@@ -1045,7 +977,6 @@ let g:gist_open_browser_after_post = 1
 " does not work right after the plugin
 nnoremap <leader>wa :call argumentrewrap#RewrapArguments()<CR>
 "}}}
-
 
 " rails.vim   -------------------------------------------------------------------{{{
 nnoremap <leader>av :AV<cr>
@@ -1063,7 +994,6 @@ nnoremap <Leader>sm :RSmodel<cr>
 nnoremap <Leader>vm :RVmodel<cr>
 "}}}
 
-
 " ag.vim   -------------------------------------------------------------------{{{
 nnoremap g/ :Ag!<space>
 nnoremap g# :Ag! -w <C-R><C-W><space>
@@ -1074,7 +1004,6 @@ nnoremap gq :ccl<CR>
 nnoremap gl :cwindow<CR>
 "}}}
 
-
 " Fugitive   -------------------------------------------------------------------{{{
 autocmd BufReadPost fugitive://* set bufhidden=delete
 nnoremap <Leader>gac :Gcommit -am ""<LEFT>
@@ -1084,13 +1013,11 @@ nnoremap <leader>gw :Gwrite<cr>
 nnoremap <leader>gb :Gblame<cr>
 "}}}
 
-
 " Hardtime   -------------------------------------------------------------------{{{
 " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardTimeOn()
 nnoremap <leader>h <Esc>:call HardTimeToggle()<CR>
 let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 "}}}
-
 
 " Vim test   -------------------------------------------------------------------{{{
 nnoremap <silent> <leader>t :TestNearest<CR>
@@ -1106,12 +1033,10 @@ nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
 let g:test#javascript#jasmine#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
 "}}}
 
-
 "Setup for vim-addon-manager   -------------------------------------------------------------------{{{
 set runtimepath+=/path/to/vim
 " If you need a plugin to be activated immediately. Example: You require a command in your .vimrc:
 call vam#ActivateAddons(['vim-snippets','snipmate'], {'force_loading_plugins_now': 1})
-
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -1120,7 +1045,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "}}}
-
 
 " Powerline for vim   -------------------------------------------------------------------{{{
 set  rtp+=/usr/local/lib/python3.4/dist-packages/powerline/bindings/vim/
@@ -1132,5 +1056,6 @@ set t_Co=256
 " wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 " mv PowerlineSymbols.otf /usr/share/fonts/
 " fc-cache -vf /usr/share/fonts/
+"
 " mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 "}}}
