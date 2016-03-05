@@ -53,6 +53,7 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ashisha/image.vim'
 Plugin 'junegunn/limelight.vim'
+Plugin 'vimcommunity/vim-pi'
 
 
 " HTML
@@ -60,7 +61,7 @@ Plugin 'othree/html5.vim'
 
 
 " CSS
-Plugin 'mutewinter/vim-css3-syntax'
+"Plugin 'mutewinter/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-haml'
 
@@ -70,6 +71,8 @@ Plugin 'othree/es.next.syntax.vim'
 Plugin '1995eaton/vim-better-javascript-completion'
 Plugin 'tobinvanpelt/vim-coffee-script'
 Plugin 'curist/vim-angular-template'
+Plugin 'burnettk/vim-angular'
+Plugin 'matthewsimo/angular-vim-snippets'
 Plugin 'elzr/vim-json', {'autoload':{'filetypes':['json']}}
 Plugin 'ruanyl/vim-fixmyjs'
 
@@ -128,11 +131,12 @@ Plugin 'NagatoPain/AutoSQLUpperCase.vim'
 
 
 " Autocomplete
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'MarcWeber/vim-addon-manager'
 Plugin 'tomtom/tlib_vim'
-
+Plugin 'vim-scripts/tlib'
+Plugin 'jalcine/cmake.vim'
 
 " Git helpers
 Plugin 'tpope/vim-fugitive'
@@ -145,7 +149,6 @@ Plugin 'rhysd/github-complete.vim'
 Plugin 'junegunn/vim-github-dashboard'
 
 " Untils
-
 Plugin 'benekastah/neomake'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'AndrewRadev/switch.vim'
