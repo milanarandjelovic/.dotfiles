@@ -8,8 +8,8 @@ function mecho() {
   echo -e "\033[0m"
 }
 
-mecho "Installing vim..."
-  sudo apt-get install -y vim
+#mecho "Installing vim..."
+#  sudo apt-get install -y vim
 
 mecho "Installing xclip..."
   sudo apt-get install -y xclip
@@ -20,12 +20,12 @@ mecho "Installing neovim..."
   sudo apt-get -y install neovim
   sudo apt-get -y install python3-pip
 
-mecho "Installing vim-gnome..."
-  sudo apt-get install -y vim-gnome
+#mecho "Installing vim-gnome..."
+#  sudo apt-get install -y vim-gnome
 
 mecho "Installing git..."
   sudo apt-get install -y git
-  
+
 mecho "Instaling php-mcrypt"
   sudo apt-get install php5-mcrypt
   sudo php5enmod mcrypt
