@@ -54,6 +54,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'ashisha/image.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'vimcommunity/vim-pi'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'elixir-lang/vim-elixir'
 
 
 " HTML
@@ -64,11 +66,14 @@ Plugin 'othree/html5.vim'
 "Plugin 'mutewinter/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-haml'
+Plugin 'ap/vim-css-color'
+
 
 " Javascript
 Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
 Plugin '1995eaton/vim-better-javascript-completion'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'tobinvanpelt/vim-coffee-script'
 Plugin 'curist/vim-angular-template'
 Plugin 'burnettk/vim-angular'
