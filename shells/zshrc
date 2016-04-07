@@ -99,3 +99,5 @@ fi
 # disable gnome effects
 which ggsettings > /dev/null 2>&1 && set org.gnome.desktop.interface enable-animations false
 which rbenv > /dev/null 2>&1 && eval "$(rbenv init - --no-rehash zsh)"
+
+export TERM="xterm-256color"  # For solarized theme in tmux
