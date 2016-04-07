@@ -41,7 +41,6 @@ Plugin 'austintaylor/vim-commaobject'
 Plugin 'tristen/vim-sparkup'
 Plugin 'takac/vim-hardtime'
 Plugin 'weierophinney/argumentrewrap'
-Plugin 'joonty/vdebug'
 Plugin 'shawncplus/Vim-toCterm'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-speeddating'
@@ -67,7 +66,7 @@ Plugin 'npacker/vim-css3complete'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'rstacruz/vim-ultisnips-css'
 Plugin 'chrisyip/better-css-syntax-for-vim'
-
+Plugin 'csslint/csslint'
 
 " Javascript
 Plugin 'othree/yajs.vim'
@@ -89,10 +88,14 @@ Plugin 'Quramy/tsuquyomi'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'arnaud-lb/vim-php-namespace'
-Plugin 'docteurklein/php-getter-setter.vim'
+"Plugin 'docteurklein/php-getter-setter.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'm2mdas/phpcomplete-extended'
 Plugin 'dsawardekar/wordpress.vim'
+Plugin 'nrocco/vim-phplint'
+Plugin 'joonty/vdebug'
+Plugin '2072/php-indenting-for-vim'
+Plugin 'alvan/vim-php-manual'
 
 " Laravel
 Plugin 'm2mdas/phpcomplete-extended-laravel'
@@ -101,10 +104,10 @@ Plugin 'jwalton512/vim-blade'
 Plugin 'johnhamelink/blade.vim'
 
 " Ruby on Rails
-Plugin 'vim-scripts/ruby-matchit'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'thoughtbot/vim-rspec'
+"Plugin 'vim-scripts/ruby-matchit'
+"Plugin 'vim-ruby/vim-ruby'
+"Plugin 'tpope/vim-rails'
+"Plugin 'thoughtbot/vim-rspec'
 
 " Togglable panels
 Plugin 'scrooloose/nerdtree'
@@ -118,7 +121,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 " Plugin 'klen/python-mode'
 Plugin 'vim-scripts/c.vim'
 
@@ -266,6 +269,9 @@ set statusline+=%c,     " cursor column
 set statusline+=%l/%L   " cursor line/total lines
 set statusline+=\ %P    " percent through file
 
+noremap <C-l> Phplint<CR></CR>
+
+
 if exists("+relativenumber")
   set relativenumber
 endif
@@ -280,10 +286,10 @@ let g:webdevicons_enable_ctrlp = 1
 " }}}
 
 " Backup/persistance settings   ----------------------------------------------------------{{{
-"set undodir=~/.vim/tmp/undo//
-"set backup
-"set writebackup
-"set noswapfile
+set undodir=~/.vim/tmp/undo//
+set backup
+set writebackup
+set noswapfile
 " }}}
 
 
@@ -366,7 +372,7 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=30
 let g:NERDTreeAutoDeleteBuffer=1
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -522,16 +528,21 @@ let mapleader=","
 
 " Syntax highlighting   ----------------------------------------------------------{{{
 syntax on
-"colorscheme solarized
-"colorscheme hybrid_material
-"let g:airline_theme = "hybrid"
+
 let g:enable_bold_font = 1
 set background=dark
 "let g:molokai_original=1
 let g:rehash256=1
 set t_Co=256
+
+"colorscheme hybrid_material
+"let g:airline_theme = "hybrid"
+
+colorscheme solarized
+"let g:solarized_termcolors=256
+
 "colorscheme molokai
-colorscheme OceanicNext
+"colorscheme OceanicNext
 " highlightt the current line number
 hi CursorLineNR guifg=#ffffff
 " highlight bad words in red
