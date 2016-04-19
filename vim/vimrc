@@ -242,7 +242,7 @@ set wildmode=list:longest,full
 set noshowmode
 set cmdheight=1
 set autoread
-display=lastline
+set colorcolumt=100
 set foldlevel=1
 set foldmethod=syntax
 set nobackup
@@ -562,10 +562,10 @@ nnoremap <leader>sc :CloseSession<CR>
 "}}}
 
 
-" Togglables without FN keys   ----------------------------------------------------------{{{
-nnoremap <leader>1 :GundoToggle<CR>
-nnoremap <leader>3 :TlistToggle<CR>
-nnoremap <leader>4 :TagbarToggle<CR>
+" Togglables keys   ----------------------------------------------------------{{{
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <F6> :TlistToggle<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
 "}}}
 
 
