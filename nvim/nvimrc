@@ -22,135 +22,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-
 " Colorschemes
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'mhartington/oceanic-next'
 NeoBundle 'ujihisa/unite-colorscheme'
 
-" HTML
-NeoBundle 'othree/html5.vim'
-
-" CSS
-"NeoBundle 'mutewinter/vim-css3-syntax'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'tpope/vim-haml'
-
-" PHP
-NeoBundle 'StanAngeloff/php.vim'
-NeoBundle 'captbaritone/better-indent-support-for-php-with-html'
-NeoBundle 'arnaud-lb/vim-php-namespace'
-NeoBundle 'shawncplus/phpcomplete.vim'
-NeoBundle 'dsawardekar/wordpress.vim'
-"NeoBundle 'docteurklein/php-getter-setter.vim'
-"NeoBundle 'm2mdas/phpcomplete-extended'
-
-" Laravel
-"NeoBundle 'm2mdas/phpcomplete-extended-laravel'
-NeoBundle 'xsbeats/vim-blade'
-
-" Javascript
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'othree/es.next.syntax.vim'
-NeoBundle '1995eaton/vim-better-javascript-completion'
-NeoBundle 'tobinvanpelt/vim-coffee-script'
-NeoBundle 'curist/vim-angular-template'
-NeoBundle 'ruanyl/vim-fixmyjs'
-NeoBundle 'elzr/vim-json', {'autoload':{'filetypes':['json']}}
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'marijnh/tern_for_vim'
-NeoBundle 'othree/javascript-libraries-syntax.vim'
-
-" Typescript
-NeoBundle 'HerringtonDarkholme/yats.vim'
-NeoBundle 'Quramy/tsuquyomi'
-
-" Ruby on Rails
-"NeoBundle 'vim-scripts/ruby-matchit'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'thoughtbot/vim-rspec'
-
-" Togglable panels
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-
-" Autocomplete
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'MarcWeber/vim-addon-manager'
-NeoBundle 'tomtom/tlib_vim'
-
-" Snippets
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'garbas/vim-snipmate'
-
-" Git helpers
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'jreybert/vimagit'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'https://github.com/jaxbot/github-issues.vim'
-NeoBundle 'mattn/gist-vim.git'
-NeoBundle 'rhysd/github-complete.vim'
-NeoBundle 'junegunn/vim-github-dashboard'
-
-" Untils
-NeoBundle 'benekastah/neomake'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'tmux-plugins/vim-tmux'
-NeoBundle 'tmux-plugins/vim-tmux-focus-events'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Chiel92/vim-autoformat'
-NeoBundle 'gorodinskiy/vim-coloresque'
-
-" Shougo
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/deoplete.nvim'
-NeoBundle 'Shougo/neco-vim'
-NeoBundle 'Shougo/neoinclude.vim'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-
-" Indent Line
-NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'Valloric/MatchTagAlways'
-
-" Markdown
-"NeoBundle 'tpope/vim-markdown'
-NeoBundle 'suan/vim-instant-markdown'
-
-" Databases
-"NeoBundle 'im-scripts/SQLUtilities'
-NeoBundle 'NagatoPain/AutoSQLUpperCase.vim'
-
-" fzf
-NeoBundle 'junegunn/fzf.vim'
-NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
-
-" Other plugins
+" Other NeoBundles
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'scrooloose/syntastic.git'
@@ -172,22 +50,163 @@ NeoBundle 'austintaylor/vim-commaobject'
 NeoBundle 'tristen/vim-sparkup'
 NeoBundle 'takac/vim-hardtime'
 NeoBundle 'weierophinney/argumentrewrap'
-NeoBundle 'joonty/vdebug'
 NeoBundle 'shawncplus/Vim-toCterm'
-"NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'janko-m/vim-test'
-"NeoBundle 'mattn/webapi-vim.gi'
+NeoBundle 'mattn/webapi-vim.git'
 NeoBundle 'ryanoasis/vim-devicons'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'ashisha/image.vim'
+" NeoBundle 'ashisha/image.vim'
 NeoBundle 'junegunn/limelight.vim'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'elixir-lang/vim-elixir'
 
-NeoBundle 'fatih/vim-go'
-"NeoBundle 'klen/python-mode'
+" HTML
+NeoBundle 'othree/html5.vim'
+
+" CSS
+"NeoBundle 'mutewinter/vim-css3-syntax'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'ap/vim-css-color'
+NeoBundle 'hail2u/vim-css3-syntax'
+
+NeoBundle 'npacker/vim-css3complete'
+NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'rstacruz/vim-ultisnips-css'
+NeoBundle 'chrisyip/better-css-syntax-for-vim'
+NeoBundle 'csslint/csslint'
+
+" Javascript
+NeoBundle 'othree/yajs.vim'
+NeoBundle 'othree/es.next.syntax.vim'
+NeoBundle '1995eaton/vim-better-javascript-completion'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'tobinvanpelt/vim-coffee-script'
+NeoBundle 'curist/vim-angular-template'
+NeoBundle 'burnettk/vim-angular'
+NeoBundle 'matthewsimo/angular-vim-snippets'
+NeoBundle 'elzr/vim-json', {'autoload':{'filetypes':['json']}}
+NeoBundle 'ruanyl/vim-fixmyjs'
+
+" Typescript
+NeoBundle 'HerringtonDarkholme/yats.vim'
+NeoBundle 'Quramy/tsuquyomi'
+
+" PHP
+NeoBundle 'StanAngeloff/php.vim'
+NeoBundle 'captbaritone/better-indent-support-for-php-with-html'
+NeoBundle 'arnaud-lb/vim-php-namespace'
+"NeoBundle 'docteurklein/php-getter-setter.vim'
+NeoBundle 'shawncplus/phpcomplete.vim'
+NeoBundle 'm2mdas/phpcomplete-extended'
+NeoBundle 'dsawardekar/wordpress.vim'
+NeoBundle 'nrocco/vim-phplint'
+NeoBundle 'joonty/vdebug'
+NeoBundle '2072/php-indenting-for-vim'
+NeoBundle 'alvan/vim-php-manual'
+
+" Laravel
+NeoBundle 'm2mdas/phpcomplete-extended-laravel'
+"NeoBundle 'xsbeats/vim-blade'
+NeoBundle 'jwalton512/vim-blade'
+NeoBundle 'johnhamelink/blade.vim'
+
+" Ruby on Rails
+"NeoBundle 'vim-scripts/ruby-matchit'
+"NeoBundle 'vim-ruby/vim-ruby'
+"NeoBundle 'tpope/vim-rails'
+"NeoBundle 'thoughtbot/vim-rspec'
+
+" Togglable panels
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-vinegar'
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+
+" Language vundles
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+
+"NeoBundle 'fatih/vim-go'
+" NeoBundle 'klen/python-mode'
 NeoBundle 'vim-scripts/c.vim'
 
+" Markdown
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'suan/vim-instant-markdown'
 
+" Databases
+NeoBundle 'vim-scripts/SQLUtilities'
+NeoBundle 'NagatoPain/AutoSQLUpperCase.vim'
+
+" Autocomplete
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'MarcWeber/vim-addon-manager'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'vim-scripts/tlib'
+NeoBundle 'jalcine/cmake.vim'
+
+" Git helpers
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'jreybert/vimagit'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'Xuyuanp/nerdtree-git-NeoBundle'
+NeoBundle 'https://github.com/jaxbot/github-issues.vim'
+NeoBundle 'mattn/gist-vim.git'
+NeoBundle 'rhysd/github-complete.vim'
+NeoBundle 'junegunn/vim-github-dashboard'
+
+" Untils
+NeoBundle 'benekastah/neomake'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'tmux-NeoBundles/vim-tmux'
+NeoBundle 'tmux-NeoBundles/vim-tmux-focus-events'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'gorodinskiy/vim-coloresque'
+
+" Shougo
+NeoBundle 'shougo/unite.vim'
+NeoBundle 'shougo/unite-outline'
+NeoBundle 'shougo/vimfiler.vim'
+NeoBundle 'shougo/deoplete.nvim'
+NeoBundle 'shougo/neco-vim'
+NeoBundle 'shougo/neoinclude.vim'
+NeoBundle 'shougo/neosnippet.vim'
+NeoBundle 'shougo/neosnippet-snippets'
+NeoBundle 'shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
+" Snippets
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'garbas/vim-snipmate'
+
+" Indent Line
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Valloric/MatchTagAlways'
+
+" fzf
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
+NeoBundle 'junegunn/fzf.vim'
 call neobundle#end()
 
 " Required:
@@ -197,8 +216,7 @@ filetype plugin indent on
     " this will conveniently prompt you to install them.
 NeoBundleCheck
 " }}}
-
-" Settings & Keybindings  ----------------------------------------------------------{{{
+" SETTINGS & KEYBINDINGS  ----------------------------------------------------------{{{
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set smarttab
 set autoindent
@@ -213,7 +231,7 @@ set incsearch
 set hls
 set ls=2
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 set nowrap
 set backspace=2
 set backspace=indent,eol,start
@@ -225,6 +243,7 @@ set wildmode=list:longest,full
 set noshowmode
 set cmdheight=1
 set autoread
+set colorcolumn=100
 set foldlevel=1
 set foldmethod=syntax
 set nobackup
@@ -238,22 +257,24 @@ set tabpagemax=20
 set tags+=./tags.vendors,tags.vendors
 set ttyfast
 set mouse=a " Enable mouse
-display=lastline
 
-set statusline=%f                               " file name
+set statusline=%f       " file name
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}]                         " file format
-set statusline+=%h                              " help file flag
-set statusline+=%m                              " modified flag
-set statusline+=%r                              " read only flag
-set statusline+=%y                              " filetype
-set statusline+=%=                              " left/right separator
-set statusline+=%c,                             " cursor column
-set statusline+=%l/%L                           " cursor line/total lines
-set statusline+=\ %P                            " percent through file
+set statusline+=%{&ff}] " file format
+set statusline+=%h      " help file flag
+set statusline+=%m      " modified flag
+set statusline+=%r      " read only flag
+set statusline+=%y      " filetype
+set statusline+=%=      " left/right separator
+set statusline+=%c,     " cursor column
+set statusline+=%l/%L   " cursor line/total lines
+set statusline+=\ %P    " percent through file
+
+noremap <C-l> Phplint<CR></CR>
+
 
 if exists("+relativenumber")
-    set relativenumber
+  set relativenumber
 endif
 " }}}
 
@@ -272,6 +293,7 @@ set writebackup
 set noswapfile
 " }}}
 
+
 " Persist (g)undo tree between sessions   ----------------------------------------------------------{{{
 set undofile
 set history=100
@@ -283,6 +305,7 @@ let g:webdevicons_enable_airline_statusline = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
 " }}}
+
 
 " Fold, gets it's own section  ----------------------------------------------{{{
 
@@ -301,14 +324,6 @@ function! MyFoldText() " {{{
     let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
     return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
 endfunction " }}}
-
-function! JavaScriptFold() "{{{
-  " syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-  setlocal foldmethod=syntax
-  setlocal foldlevel=99
-  echo "hello"
-  syn region foldBraces start=/{/ skip=/\(\/\/.*\)\|\(\/.*\/\)/ end=/}/ transparent fold keepend extend
-endfunction "}}}
 
 function! JavaScriptFold() "{{{
   " syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
@@ -358,7 +373,7 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=30
 let g:NERDTreeAutoDeleteBuffer=1
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -389,6 +404,7 @@ call NERDTreeHighlightFile('gitconfig', 'black', 'none', '#686868', 'none')
 call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
 "}}}
 
+
 " Snipppets -----------------------------------------------------------------{{{
 " Enable snipMate compatibility feature.
   let g:neosnippet#enable_snipmate_compatibility = 1
@@ -405,7 +421,9 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
   smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
   \ "\<Plug>(neosnippet_expand_or_jump)"
   \: "\<TAB>"
+
 "}}}
+
 
 " Typescript & Javscript omni complete --------------------------------------{{{
   let g:vimjs#casesensistive = 1
@@ -424,6 +442,7 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
                 \'^\s*@[A-Z][a-z]'
                 \]
 "}}}
+
 
 " Emmet customization -------------------------------------------------------{{{
 " Enable Emmet in all modes
@@ -452,6 +471,7 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
    let g:user_emmet_install_global = 0
    autocmd FileType html,css,ejs EmmetInstall
 "}}}
+
 
 " Git from unite...ERMERGERD ------------------------------------------------{{{
 let g:unite_source_menu_menus = {} " Useful when building interfaces at appropriate places
@@ -490,9 +510,11 @@ let g:unite_source_menu_menus.git = {
   nnoremap <silent> <Leader>g :Unite -direction=botright -silent -buffer-name=git -start-insert menu:git<CR>
 "}}}
 
+
 " Set <leader>  ----------------------------------------------------------{{{
 let mapleader=","
 "}}}
+
 
 " Show trailing whitespaces   ----------------------------------------------------------{{{
 "set list
@@ -504,23 +526,34 @@ let mapleader=","
 "augroup END
 "}}}
 
+
 " Syntax highlighting   ----------------------------------------------------------{{{
 syntax on
-"colorscheme solarized
-"colorscheme hybrid_material
-"let g:airline_theme = "hybrid"
+
 let g:enable_bold_font = 1
+
 set background=dark
-let g:molokai_original=1
+"let g:molokai_original=1
 let g:rehash256=1
 set t_Co=256
-"colorscheme molokai
-colorscheme OceanicNext
+
+" let g:onedark_termcolors=256
+
+" colorscheme hybrid_material
+" let g:airline_theme = "hybrid"
+
+" colorscheme solarized8_dark_high
+" let g:solarized_termcolors=256
+
+colorscheme molokai
+" colorscheme OceanicNext
 " highlightt the current line number
 hi CursorLineNR guifg=#ffffff
 " highlight bad words in red
 hi SpellBad guibg=#ff2929 guifg=#ffffff" ctermbg=224
 "}}}
+
+
 
 " Session management   ----------------------------------------------------------{{{
 " let g:session_directory = "~/.vim/session"
@@ -533,11 +566,13 @@ nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 "}}}
 
-" Togglables without FN keys   ----------------------------------------------------------{{{
-nnoremap <leader>1 :GundoToggle<CR>
-nnoremap <leader>3 :TlistToggle<CR>
-nnoremap <leader>4 :TagbarToggle<CR>
+
+" Togglables keys   ----------------------------------------------------------{{{
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <F6> :TlistToggle<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
 "}}}
+
 
 " Disable the arrow key   ----------------------------------------------------------{{{   
 noremap <Up> <NOP>
@@ -550,33 +585,40 @@ inoremap <Up> <nop>
 inoremap <Down> <nop>
 "}}}
 
+
 " Visual reselect of just pasted   ----------------------------------------------------------{{{
 nnoremap gp `[v`]
 "}}}
+
 
 " Make enter break and do newlines   ----------------------------------------------------------{{{
 nnoremap <CR> O<Esc>j
 nnoremap <leader>j i<CR><Esc>==
 "}}}
 
+
 " Make space in normal mode add space   ----------------------------------------------------------{{{
 nnoremap <Space> i<Space><Esc>l
 "}}}
+
 
 " Better scrolling   ----------------------------------------------------------{{{
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 "}}}
 
+
 " Consistent menu navigation   ----------------------------------------------------------{{{
 inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
 "}}}
 
+
 " Intellij style autocomplete shortcut   ----------------------------------------------------------{{{
 inoremap <C-@> <C-x><C-o>
 inoremap <C-Space> <C-x><C-o>
 "}}}
+
 
 " ctrlP config   ----------------------------------------------------------{{{
 let g:ctrlp_map = "<c-p>"
@@ -595,54 +637,65 @@ let g:ctrlp_custom_ignore = {
   \ }
 "}}}
 
+
 " Easy motion rebinded   ----------------------------------------------------------{{{
 nmap <leader>f <Plug>(easymotion-f2)
 nmap <leader>F <Plug>(easymotion-F2)
 "}}}
+
 
 " Open vimrc   ----------------------------------------------------------{{{
 nnoremap <leader>v :e  ~/.nvimrc<CR>
 nnoremap <leader>V :tabnew  ~/.nvimrc<CR>
 "}}}
 
+
 " Reload all open buffers   ----------------------------------------------------------{{{
 nnoremap <leader>Ra :tabdo exec "windo e!"
 "}}}
+
 
 " Map next-previous jumps   ----------------------------------------------------------{{{
 nnoremap <leader>m <C-o>
 nnoremap <leader>. <C-i>
 "}}}
 
+
 " Keep search matches in the middle of the window.   ----------------------------------------------------------{{{
 nnoremap n nzzzv
 nnoremap N Nzzzv
 "}}}
+
 
 " Use sane regexes   ----------------------------------------------------------{{{
 nnoremap <leader>/ /\v
 vnoremap <leader>/ /\v
 "}}}
 
+
 " Use :Subvert search   ----------------------------------------------------------{{{
 nnoremap <leader>// :S /
 vnoremap <leader>// :S /
 "}}}
+
 
 " Use regular replace   ----------------------------------------------------------{{{
 nnoremap <leader>s :%s /
 vnoremap <leader>s :%s /
 "}}}
 
+
 " Use :Subvert replace   ----------------------------------------------------------{{{
 nnoremap <leader>S :%S /
 vnoremap <leader>S :%S /
 "}}}
 
+
 " clever-f prompt  ----------------------------------------------------------{{{
 let g:clever_f_show_prompt = 1
 let g:clever_f_across_no_line = 1
 "}}}
+
 
 " vim-airline ---------------------------------------------------------------{{{
 let g:airline#extensions#tabline#enabled = 1
@@ -667,6 +720,7 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 "}}}
 
+
 " Linting -------------------------------------------------------------------{{{
 function! neomake#makers#ft#javascript#eslint()
     return {
@@ -686,6 +740,7 @@ function! JscsFix()
   noremap <leader>j :JscsFix<CR>
 "}}}
 
+
 " YouCompleteMe   -------------------------------------------------------------------{{{
 let g:ycm_filetype_blacklist = {}
 let g:ycm_key_list_select_completion = []
@@ -699,10 +754,12 @@ if executable("ag")
 endif
 "}}}
 
+
 " Reload ctags   -------------------------------------------------------------------{{{   
 " sudo apt-get install exuberant-ctags
 nnoremap <leader>C :!ctags -R --fields=+l --exclude=.git --exclude=log --exclude=tmp *<CR><CR>
 "}}}
+
 
 " Git and ack stuff   -------------------------------------------------------------------{{{
 let g:gitgutter_enabled = 1
@@ -715,12 +772,14 @@ nnoremap <leader>A :!ag
 nnoremap <leader>a :Ag! 
 "}}}
 
+
 " Vim-go settings   -------------------------------------------------------------------{{{
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
 "}}}
+
 
 " Vim-go bindings   -------------------------------------------------------------------{{{
 augroup FileType go
@@ -738,6 +797,7 @@ augroup FileType go
   au FileType go nmap <leader>t <Plug>(go-test)
 augroup END
 "}}}
+
 
 " General file runners for various languages   -------------------------------------------------------------------{{{
 function! LangRunner()
@@ -757,9 +817,11 @@ endfunction
 au BufEnter * call LangRunner()
 "}}}
 
+
 " Enable angular syntax   -------------------------------------------------------------------{{{
 let g:used_javascript_libs = 'jquery,angularjs'
 "}}}
+
 
 " COOL HACKS   -------------------------------------------------------------------{{{		     
 " Make sure Vim returns to the same line when you reopen a file.
@@ -771,17 +833,22 @@ augroup line_return
         \ endif
 augroup END
 
+
 " Thorfile, Rakefile, Vagrantfile, and Gemfile are Ruby
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+
 
 " hb is handlebars
 autocmd BufNewFile,BufRead *.hb set ai filetype=handlebars
 
+
 " hbs is handlebars
 autocmd BufNewFile,BufRead *.hbs set ai filetype=handlebars
 
+
 " JSON is JS
 autocmd BufNewFile,BufRead *.json set ai filetype=javascript
+
 
 " Enable spell check
 autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
@@ -806,6 +873,7 @@ augroup phpSyntaxOverride
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
+
 " Visual Mode */# from Scrooloose
 function! s:VSetSearch()
   let temp = @@
@@ -815,6 +883,7 @@ function! s:VSetSearch()
 endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
 
 " Text Highlighter = <leader>h[1-4]
 function! HiInterestingWord(n)
@@ -851,6 +920,7 @@ hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 
 highlight search ctermfg=white ctermbg=3423513
 
+
 " Better retab
 fu! Retab()
   :retab
@@ -858,12 +928,14 @@ fu! Retab()
 endfunction
 "}}}
 
+
 " BUG WORKAROUNDS   -------------------------------------------------------------------{{{	
 " Realign buffers when iterm goes fullscreen
 augroup FixProportionsOnResize
   au!
   au VimResized * exe "normal! \<c-w>="
 augroup END
+
 
 " Vim mode-switch lag fix
 if ! has("gui_running")
@@ -875,6 +947,7 @@ if ! has("gui_running")
     augroup END
 endif
 
+
 " Macos vs linux clipboard
 if has("mac")
   set clipboard+=unnamed
@@ -882,11 +955,14 @@ else
   set clipboard=unnamedplus
 endif
 
+
 " Make C-a, C-x work properly
 set nrformats=
 
+
 " Potential lag fix
 let g:matchparen_insert_timeout=1
+
 
 " Fix bufexplorer bug with hidden
 let g:bufExplorerFindActive=0
@@ -895,6 +971,7 @@ autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 set completeopt=longest,menuone
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 "}}}
+
 
 " CONFIGS, MAPPINGS   -------------------------------------------------------------------{{{
 " rm file
@@ -905,13 +982,16 @@ let g:hardtime_showmsg = 1
 nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
 "}}}
 
+
 " PHP   -------------------------------------------------------------------{{{
 " PHP cs fixer
 autocmd FileType php nnoremap <leader>pff  :call PhpCsFix('%')<cr>
 autocmd FileType php nnoremap <leader>pfaf :call PhpCsFix('.')<cr>
 
+
 " PHP use
 nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+
 
 " PHP-getter-setter
 autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
@@ -933,6 +1013,7 @@ let b:phpgetset_getterTemplate =
     \ "    }"
 "}}}
 
+
 " Tabular   -------------------------------------------------------------------{{{
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warning'}
@@ -952,16 +1033,19 @@ nnoremap ar :Tabularize /=><CR>
 vnoremap ar :Tabularize /=><CR>
 "}}}
 
+
 " Ultisnips   -------------------------------------------------------------------{{{ 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:snips_author="Milan Arandjelovic"
 "}}}
 
+
 " Sparkup   -------------------------------------------------------------------{{{
 let g:sparkupExecuteMapping = '<C-Y>,'
 let g:sparkupNextMapping = '<c-y>n'
 "}}}
+
 
 " gits   -------------------------------------------------------------------{{{
 if has("mac")
@@ -975,6 +1059,7 @@ let g:gist_open_browser_after_post = 1
 " does not work right after the plugin
 nnoremap <leader>wa :call argumentrewrap#RewrapArguments()<CR>
 "}}}
+
 
 " rails.vim   -------------------------------------------------------------------{{{
 nnoremap <leader>av :AV<cr>
@@ -992,6 +1077,7 @@ nnoremap <Leader>sm :RSmodel<cr>
 nnoremap <Leader>vm :RVmodel<cr>
 "}}}
 
+
 " ag.vim   -------------------------------------------------------------------{{{
 nnoremap g/ :Ag!<space>
 nnoremap g# :Ag! -w <C-R><C-W><space>
@@ -1002,6 +1088,7 @@ nnoremap gq :ccl<CR>
 nnoremap gl :cwindow<CR>
 "}}}
 
+
 " Fugitive   -------------------------------------------------------------------{{{
 autocmd BufReadPost fugitive://* set bufhidden=delete
 nnoremap <Leader>gac :Gcommit -am ""<LEFT>
@@ -1011,11 +1098,13 @@ nnoremap <leader>gw :Gwrite<cr>
 nnoremap <leader>gb :Gblame<cr>
 "}}}
 
+
 " Hardtime   -------------------------------------------------------------------{{{
 " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardTimeOn()
 nnoremap <leader>h <Esc>:call HardTimeToggle()<CR>
 let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 "}}}
+
 
 " Vim test   -------------------------------------------------------------------{{{
 nnoremap <silent> <leader>t :TestNearest<CR>
@@ -1031,10 +1120,12 @@ nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
 let g:test#javascript#jasmine#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
 "}}}
 
+
 "Setup for vim-addon-manager   -------------------------------------------------------------------{{{
 set runtimepath+=/path/to/vim
 " If you need a plugin to be activated immediately. Example: You require a command in your .vimrc:
 call vam#ActivateAddons(['vim-snippets','snipmate'], {'force_loading_plugins_now': 1})
+
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -1043,6 +1134,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "}}}
+
 
 " Powerline for vim   -------------------------------------------------------------------{{{
 set  rtp+=/usr/local/lib/python3.4/dist-packages/powerline/bindings/vim/
@@ -1054,6 +1146,5 @@ set t_Co=256
 " wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 " mv PowerlineSymbols.otf /usr/share/fonts/
 " fc-cache -vf /usr/share/fonts/
-"
 " mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 "}}}
